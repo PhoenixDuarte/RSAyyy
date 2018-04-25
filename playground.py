@@ -4,7 +4,7 @@ n = 21971
 e = 131
 d = 17867
 
-message = "wew"
+message = "feeding"
 encrypted_message = ""
 decrypted_message = ""
 
@@ -24,7 +24,6 @@ for t in encrypted_message:
     decrypt = pow(numerize, d, n)
     denumerize = chr(decrypt)
     decrypted_message += denumerize
-    
     
 print decrypted_message
 end = time.time()
