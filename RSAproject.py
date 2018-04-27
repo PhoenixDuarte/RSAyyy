@@ -4,11 +4,10 @@ n=0
 d=0        
 decrypted_message= ""
 
-def start()
-  print("Welcome to the Cool™ Encryption and Decryption Program [With cool exit feature!]")
-  whatdo = input("Please select what you'd like to do: encrypt, decrypt, or exit.")
-  while whatdo != "exit"
-    
+#def start():
+  #print("Welcome to the Cool™ Encryption and Decryption Program [With cool exit feature!]")
+  #whatdo = input("Please select what you'd like to do: encrypt, decrypt, or exit.")
+  #while whatdo != "exit"
 
 def encrypt(e, n):
     encrypted_message= ""
