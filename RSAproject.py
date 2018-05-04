@@ -2,8 +2,9 @@ message= ""
 e=0
 n=0
 d=0        
-decrypted_message= ""
 
+encrypted_message= ""
+decrypted_message= ""
 endictcryption  = dict()
 dictcryption = dict()
 
@@ -16,7 +17,7 @@ def encrypt(e, n):
     message= input("Please enter the message you would like to encrypt:")
     for x in message:
       if x in endictcryption:
-        encrypted_message += endictcryption[x]
+       encrypted_message += endictcryption[x]
       else:
         numerize= ord(x)
         encrypt = pow(numerize, e, n)
@@ -24,7 +25,7 @@ def encrypt(e, n):
         encrypted_message += denumerize 
         endictcryption[x] = denumerize
     print ("Your encrypted message is:", encrypted_message)
-  
+
 def decrypt(d, n):
     decrypted_message= ""
     d= int(input('Please enter a value in for d:'))
@@ -35,12 +36,12 @@ def decrypt(d, n):
     for t in encrypted_message:
       if t in dictcryption:
         decrypted_message += dictcryption[t]
-    else:
-      numerize = ord(t)
-      decrypt = pow(numerize, d, n)
-      denumerize = chr(decrypt)
-      decrypted_message += denumerize
-      dictcryption[t] = denumerize
+      else:
+        numerize = ord(t)
+        decrypt = pow(numerize, d, n)
+        denumerize = chr(decrypt)
+        decrypted_message += denumerize
+        dictcryption[t] = denumerize
     print ("Your decrypted message is:", decrypted_message)
 
 def start():
@@ -50,10 +51,13 @@ def start():
   while (whatdo != 1):
     if command == "encrypt" or command == "Encrypt":
       encrypt(e, n)
+      command = input("Please select what you'd like to do: encrypt, decrypt, or exit.")
     elif command == "decrypt" or command == "Decrypt":
       decrypt(d, n)
+      command = input("Please select what you'd like to do: encrypt, decrypt, or exit.")
     elif command == "exit" or command == "Exit":
       whatdo = 1
     else:
-      print ("That is incorrect! Please write in a proper answer.")
+      print ("You dummmy. Please write in a proper answer.")
+      command = input("Please select what you'd like to do: encrypt, decrypt, or exit.")
   print ("Thank you for using our program, have a great day!")
