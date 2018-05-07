@@ -5,8 +5,8 @@ d=0
 
 encrypted_message= ""
 decrypted_message= ""
-endictcryption  = dict()
-dictcryption = dict()
+#endictcryption  = dict()
+#dictcryption = dict()
 
 def encrypt(e, n):
     encrypted_message= ""
@@ -16,14 +16,14 @@ def encrypt(e, n):
     print("n =", n)
     message= input("Please enter the message you would like to encrypt:")
     for x in message:
-      if x in endictcryption:
-       encrypted_message += endictcryption[x]
-      else:
-        numerize= ord(x)
-        encrypt = pow(numerize, e, n)
-        denumerize = chr(encrypt) 
-        encrypted_message += denumerize 
-        endictcryption[x] = denumerize
+      #if x in endictcryption:
+       #encrypted_message += endictcryption[x]
+       #else:
+       numerize= ord(x)
+       encrypt = pow(numerize, e, n)
+       denumerize = chr(encrypt) 
+       encrypted_message += denumerize 
+       #endictcryption[x] = denumerize
     print ("Your encrypted message is:", encrypted_message)
 
 def decrypt(d, n):
@@ -34,14 +34,14 @@ def decrypt(d, n):
     print("n =", n)
     encrypted_message= input("Please enter the message you would like to decrypt:")
     for t in encrypted_message:
-      if t in dictcryption:
-        decrypted_message += dictcryption[t]
-      else:
-        numerize = ord(t)
-        decrypt = pow(numerize, d, n)
-        denumerize = chr(decrypt)
-        decrypted_message += denumerize
-        dictcryption[t] = denumerize
+      #if t in dictcryption:
+        #decrypted_message += dictcryption[t]
+      #else:
+      numerize = ord(t)
+      decrypt = pow(numerize, d, n)
+      denumerize = chr(decrypt)
+      decrypted_message += denumerize
+      #dictcryption[t] = denumerize
     print ("Your decrypted message is:", decrypted_message)
 
 def start():
